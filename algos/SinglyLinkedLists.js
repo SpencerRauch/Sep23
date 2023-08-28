@@ -60,6 +60,7 @@ class SinglyLinkedList {
      * @returns {SinglyLinkedList} This list.
      */
     insertAtBack(data) {
+        let newEnd = new ListNode(data)
         //Your code here
     }
   
