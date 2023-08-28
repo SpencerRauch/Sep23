@@ -48,7 +48,7 @@ class SinglyLinkedList {
      * @returns {boolean}
      */
     isEmpty() {
-        //Your code here
+        return this.head === null;
     }
   
     /**
@@ -61,6 +61,14 @@ class SinglyLinkedList {
      */
     insertAtBack(data) {
         let newEnd = new ListNode(data)
+        if (this.isEmpty()){
+            this.head = newEnd;
+        }
+        let runner = this.head;
+        while(runner.next !== null){
+            runner = runner.next;
+        }
+        runner.next = newEnd;
         //Your code here
     }
   
@@ -75,7 +83,15 @@ class SinglyLinkedList {
      * @returns {SinglyLinkedList} This list.
      */
     insertAtBackRecursive(data, runner = this.head) { 
-        //Your code here (bonus)
+        if (this.head === null){
+            this.head = new ListNode(data)
+            return
+        }
+        if (runner.next === null){
+            runner.next = new ListNode(data)
+            return
+        }
+        return this.insertAtBackRecursive(data, runner.next)
     }
   
     /**
@@ -115,20 +131,20 @@ class SinglyLinkedList {
   Below commented code depends on insertAtBack method to be completed,
   after completing it, uncomment the code.
   */
-//   const emptyList = new SinglyLinkedList();
+  const emptyList = new SinglyLinkedList();
   
-//   const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
-//   const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
-//   const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
-//   const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
-//   const unorderedList = new SinglyLinkedList().insertAtBackMany([
-//     -5, -10, 4, -3, 6, 1, -7, -2,
-//   ]);
+  const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+  const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+  const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+  const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+  const unorderedList = new SinglyLinkedList().insertAtBackMany([
+    -5, -10, 4, -3, 6, 1, -7, -2,
+  ]);
   
-//   const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
-//     1, 1, 1, 2, 3, 3, 4, 5, 5,
-//   ]);
+  const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
+    1, 1, 1, 2, 3, 3, 4, 5, 5,
+  ]);
   
-//   /* Print your list like so:*/
-//   console.log(firstThreeList.toArr());
-//   console.log(sortedDupeList.toArr());
+  /* Print your list like so:*/
+  console.log(firstThreeList.toArr());
+  console.log(sortedDupeList.toArr());
