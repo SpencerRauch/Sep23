@@ -23,7 +23,7 @@ class ListNode {
        */
       this.next = null;
     }
-  }
+}
   
   /**
    * This class keeps track of the start (head) of the list and to store all the
@@ -107,7 +107,7 @@ class SinglyLinkedList {
       }
       return arr;
     }
-  }
+}
   
   /******************************************************************* 
   Multiple test lists already constructed to test your methods on.
