@@ -63,6 +63,7 @@ class SinglyLinkedList {
         let newEnd = new ListNode(data)
         if (this.isEmpty()){
             this.head = newEnd;
+            return
         }
         let runner = this.head;
         while(runner.next !== null){
