@@ -142,7 +142,7 @@ class SinglyLinkedList {
    * Removes the first node of this list.
    * - Time: (?).
    * - Space: (?).
-   * @returns {any} The data from the removed node.
+   * @returns {any} The data from the removed node or null if list is empty.
    */
   removeHead() {
     //Your code here
