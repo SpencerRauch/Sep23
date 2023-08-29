@@ -1,0 +1,15 @@
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\bin\Debug\net6.0\AbstractionInterfaces.exe
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\bin\Debug\net6.0\AbstractionInterfaces.deps.json
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\bin\Debug\net6.0\AbstractionInterfaces.runtimeconfig.json
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\bin\Debug\net6.0\AbstractionInterfaces.dll
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\bin\Debug\net6.0\AbstractionInterfaces.pdb
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.csproj.AssemblyReference.cache
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.AssemblyInfoInputs.cache
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.AssemblyInfo.cs
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.csproj.CoreCompileInputs.cache
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.dll
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\refint\AbstractionInterfaces.dll
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.pdb
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\AbstractionInterfaces.genruntimeconfig.cache
+C:\stacks\CSharp\Sep23\AbstractionInterfaces\obj\Debug\net6.0\ref\AbstractionInterfaces.dll
