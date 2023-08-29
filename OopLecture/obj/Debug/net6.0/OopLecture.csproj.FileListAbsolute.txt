@@ -1,0 +1,15 @@
+C:\stacks\CSharp\Sep23\OopLecture\bin\Debug\net6.0\OopLecture.exe
+C:\stacks\CSharp\Sep23\OopLecture\bin\Debug\net6.0\OopLecture.deps.json
+C:\stacks\CSharp\Sep23\OopLecture\bin\Debug\net6.0\OopLecture.runtimeconfig.json
+C:\stacks\CSharp\Sep23\OopLecture\bin\Debug\net6.0\OopLecture.dll
+C:\stacks\CSharp\Sep23\OopLecture\bin\Debug\net6.0\OopLecture.pdb
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.csproj.AssemblyReference.cache
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.GeneratedMSBuildEditorConfig.editorconfig
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.AssemblyInfoInputs.cache
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.AssemblyInfo.cs
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.csproj.CoreCompileInputs.cache
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.dll
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\refint\OopLecture.dll
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.pdb
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\OopLecture.genruntimeconfig.cache
+C:\stacks\CSharp\Sep23\OopLecture\obj\Debug\net6.0\ref\OopLecture.dll
