@@ -135,7 +135,10 @@ class SinglyLinkedList {
    * @returns {SinglyLinkedList} This list.
    */
   insertAtFront(data) {
-    //Your code here
+    let newHead = new ListHead(data);
+    newHead.next = this.head;
+    this.head = newHead;
+    return this;
   }
 
   /**
@@ -145,6 +148,10 @@ class SinglyLinkedList {
    * @returns {any} The data from the removed node or null if list is empty.
    */
   removeHead() {
+    if (this.isEmpty()) return null;
+    let prevHead = this.head;
+    this.head = prevHead.next;
+    return prevHead.data;
     //Your code here
   }
 
