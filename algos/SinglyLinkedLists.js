@@ -158,7 +158,7 @@ class SinglyLinkedList {
   * Removes the last node of this list.
   * - Time: O(?).
   * - Space: O(?).
-  * @returns {any} The data from the node that was removed.
+  * @returns {any} The data from the node that was removed or null if no nodes.
   */
   removeBack() {
     //Your code here
