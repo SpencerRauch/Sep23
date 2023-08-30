@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "gmJbPbNhickHWtATQCR8aYCnRg14S8CXnN3Ovhxj2kc=",
+  "Source": "NewWeb",
+  "BasePath": "_content/NewWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "NewWeb\\wwwroot",
+      "Source": "NewWeb",
+      "ContentRoot": "C:\\stacks\\CSharp\\Sep23\\NewWeb\\wwwroot\\",
+      "BasePath": "_content/NewWeb",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\stacks\\CSharp\\Sep23\\NewWeb\\wwwroot\\css\\bootstrap.css",
+      "SourceId": "NewWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\stacks\\CSharp\\Sep23\\NewWeb\\wwwroot\\",
+      "BasePath": "_content/NewWeb",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "C:\\stacks\\CSharp\\Sep23\\NewWeb\\wwwroot\\img\\cake.jpg",
+      "SourceId": "NewWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\stacks\\CSharp\\Sep23\\NewWeb\\wwwroot\\",
+      "BasePath": "_content/NewWeb",
+      "RelativePath": "img/cake.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cake.jpg"
+    }
+  ]
+}
