@@ -210,5 +210,5 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 ]);
 
 /* Print your list like so:*/
-console.log(firstThreeList.toArr());
-console.log(sortedDupeList.toArr());
+// console.log(firstThreeList.toArr());
+// console.log(sortedDupeList.toArr());
