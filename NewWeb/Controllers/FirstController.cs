@@ -23,12 +23,15 @@ public class FirstController : Controller
         return $"{name} is id {id}";
     }
 
+    //can ommit view name if it matches action identifier
+    //can access view folder that matches controller or shared
     [HttpGet("view")]
     public ViewResult FirstView()
     {
         ViewBag.Name = "Bob";
         ViewBag.Number = 8;
         return View();
+        // return View("FirstView");
     }
 
     [HttpGet("{**path}")]
