@@ -8,7 +8,7 @@ public class FirstController : Controller
     [Route("")]
     public string Index()
     {
-        return "<h1>Hello from the controller!</h1>";
+        return "<h1>Hello from the controller!</h1>"; //html does not render
     }
 
     [HttpGet("two")]
