@@ -161,8 +161,39 @@ class SinglyLinkedList {
   * @returns {any} The data from the node that was removed or null if no nodes.
   */
   removeBack() {
-    //Your code here
-   }
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    // only one node, remove the head
+    if (this.head.next === null) {
+      return this.removeHead();
+    }
+    //more than one node, move to one before the end
+    let runner = this.head;
+    while(runner.next.next){
+      runner = runner.next;
+    }
+
+    const removedData = runner.next.data;
+    runner.next = null;
+    return removedData
+  }
+  
+  removeBackTwoPointer() { 
+    let oldNode = this.head;
+    let currentNode = this.head.next;
+    while (currentNode.next !== null){
+        oldNode = currentNode;
+        currentNode = currentNode.next;
+    }
+    const removeData = currentNode.data;
+    oldNode.next = null;
+    console.log(removeData);
+    console.log(this.head);
+    return removeData;
+
+}
 
   /**
    * Determines whether or not the given search value exists in this list.
@@ -171,8 +202,13 @@ class SinglyLinkedList {
    * @param {any} val The data to search for in the nodes of this list.
    * @returns {boolean}
    */
-  contains(val) { 
-    //Your code here
+  contains(val) {
+    let runner = this.head;
+    while (runner){
+      if (runner.data == val) return true
+      runner = runner.next
+    }
+    return false;
   }
 
   /**
@@ -184,8 +220,11 @@ class SinglyLinkedList {
    *    or null when the end of the list has been reached.
    * @returns {boolean}
    */
-  containsRecursive(val, current = this.head) { 
+  containsRecursive(val, current = this.head) {
     //Your code ehre
+    if (!current) return false
+    if (current.data == val) return true
+    return this.containsRecursive(val, current.next);
   }
 
 }
