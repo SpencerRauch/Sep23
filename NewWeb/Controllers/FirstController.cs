@@ -34,6 +34,39 @@ public class FirstController : Controller
         // return View("FirstView");
     }
 
+    [HttpGet("form")]
+    public ViewResult MyForm()
+    {
+        return View();
+    }
+
+    // [HttpPost("process")]
+    // public RedirectResult Process(string Passcode)
+    // {
+    //     Console.WriteLine(Passcode);
+    //     return Redirect("view");
+    // }
+
+    // [HttpPost("process")]
+    // public RedirectToActionResult Process(string Passcode)
+    // {
+    //     Console.WriteLine(Passcode);
+    //     return RedirectToAction("FirstView");
+    // }
+
+    [HttpPost("process")]
+    public IActionResult Process(string Passcode)
+    {
+        if (Passcode == "secret")
+        {
+            return RedirectToAction("FirstView");
+        }
+
+        return View("TryAgain");
+
+    }
+
+    //catch all
     [HttpGet("{**path}")]
     public string Lost()
     {
