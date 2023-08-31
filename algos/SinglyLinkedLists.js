@@ -171,21 +171,21 @@ class SinglyLinkedList {
     }
     //more than one node, move to one before the end
     let runner = this.head;
-    while(runner.next.next){
+    while (runner.next.next) {
       runner = runner.next;
     }
 
     const removedData = runner.next.data;
     runner.next = null;
-    return removedData
+    return removedData;
   }
-  
-  removeBackTwoPointer() { 
+
+  removeBackTwoPointer() {
     let oldNode = this.head;
     let currentNode = this.head.next;
-    while (currentNode.next !== null){
-        oldNode = currentNode;
-        currentNode = currentNode.next;
+    while (currentNode.next !== null) {
+      oldNode = currentNode;
+      currentNode = currentNode.next;
     }
     const removeData = currentNode.data;
     oldNode.next = null;
@@ -193,7 +193,8 @@ class SinglyLinkedList {
     console.log(this.head);
     return removeData;
 
-}
+
+  }
 
   /**
    * Determines whether or not the given search value exists in this list.
@@ -204,9 +205,9 @@ class SinglyLinkedList {
    */
   contains(val) {
     let runner = this.head;
-    while (runner){
-      if (runner.data == val) return true
-      runner = runner.next
+    while (runner) {
+      if (runner.data == val) return true;
+      runner = runner.next;
     }
     return false;
   }
@@ -222,10 +223,33 @@ class SinglyLinkedList {
    */
   containsRecursive(val, current = this.head) {
     //Your code ehre
-    if (!current) return false
-    if (current.data == val) return true
+    if (!current) return false;
+    if (current.data == val) return true;
     return this.containsRecursive(val, current.next);
   }
+
+    /**
+   * Retrieves the data of the second to last node in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The data of the second to last node or null if there is no
+   *    second to last node.
+   */
+  secondToLast() {
+    //Your code here 
+   }
+
+  /**
+   * Removes the node that has the matching given val as it's data.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} val The value to compare to the node's data to find the
+   *    node to be removed.
+   * @returns {boolean} Indicates if a node was removed or not.
+   */
+  removeVal(val) {
+    //Your code here
+   }
 
 }
 
