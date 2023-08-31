@@ -228,16 +228,27 @@ class SinglyLinkedList {
     return this.containsRecursive(val, current.next);
   }
 
-    /**
-   * Retrieves the data of the second to last node in this list.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @returns {any} The data of the second to last node or null if there is no
-   *    second to last node.
-   */
+  /**
+ * Retrieves the data of the second to last node in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @returns {any} The data of the second to last node or null if there is no
+ *    second to last node.
+ */
   secondToLast() {
-    //Your code here 
-   }
+    //If empty or only one node
+    if (this.isEmpty() || !this.head.next){
+      return null;
+    }
+
+    let runner = this.head;
+
+    //stop one before the end
+    while ( runner.next.next){
+      runner = runner.next;
+    }
+    return runner.data;
+  }
 
   /**
    * Removes the node that has the matching given val as it's data.
@@ -248,8 +259,32 @@ class SinglyLinkedList {
    * @returns {boolean} Indicates if a node was removed or not.
    */
   removeVal(val) {
-    //Your code here
-   }
+    //if empty, nothing to remove
+    if (this.isEmpty()) {
+      return false;
+    }
+    //if the head is to be removed, call removeHead
+    if (this.head.data === val) {
+      this.removeHead();
+      return true;
+    }
+    //otherwise, declare a runner
+    let runner = this.head;
+
+    //while there is a next node
+    while (runner.next) {
+      //see if the next node has our value
+      if (runner.next.data === val) {
+        // if it does "skip" over it and return true
+        runner.next = runner.next.next;
+        return true;
+      }
+      //otherwise, move on to next node
+      runner = runner.next;
+    }
+    // never saw val, return false
+    return false;
+  }
 
 }
 
@@ -271,6 +306,9 @@ const unorderedList = new SinglyLinkedList().insertAtBackMany([
 const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
   1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
+
+unorderedList.removeVal(-2);
+console.log(unorderedList.toArr())
 
 /* Print your list like so:*/
 // console.log(firstThreeList.toArr());
