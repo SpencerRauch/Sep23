@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Pet
+<div class="text-center">
+    <h1>Tell me about your pet</h1>
+    <form asp-action="CreatePet" asp-controller="Home" method="post">
+        <div class="mb-3">
+            <label asp-for="Name">Pet Name</label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Species"></label>
+            <input asp-for="Species" class="form-control">
+            <span asp-validation-for="Species" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age"></label>
+            <input asp-for="Age" class="form-control">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IsTheGoodest"></label>
+            <input asp-for=IsTheGoodest >
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    <a class="btn btn-primary mt-3" asp-action="AllPets" asp-controller="Home">Form</a>
+</div>
