@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\stacks\\CSharp\\Sep23\\PetParty\\PetParty.csproj": {}
+    "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\PetParty.csproj": {}
   },
   "projects": {
-    "C:\\stacks\\CSharp\\Sep23\\PetParty\\PetParty.csproj": {
+    "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\PetParty.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\stacks\\CSharp\\Sep23\\PetParty\\PetParty.csproj",
+        "projectUniqueName": "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\PetParty.csproj",
         "projectName": "PetParty",
-        "projectPath": "C:\\stacks\\CSharp\\Sep23\\PetParty\\PetParty.csproj",
-        "packagesPath": "C:\\Users\\bizar\\.nuget\\packages\\",
-        "outputPath": "C:\\stacks\\CSharp\\Sep23\\PetParty\\obj\\",
+        "projectPath": "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\PetParty.csproj",
+        "packagesPath": "C:\\Users\\thiba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bizar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\thiba\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -56,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

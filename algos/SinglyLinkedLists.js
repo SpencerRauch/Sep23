@@ -237,14 +237,14 @@ class SinglyLinkedList {
  */
   secondToLast() {
     //If empty or only one node
-    if (this.isEmpty() || !this.head.next){
+    if (this.isEmpty() || !this.head.next) {
       return null;
     }
 
     let runner = this.head;
 
     //stop one before the end
-    while ( runner.next.next){
+    while (runner.next.next) {
       runner = runner.next;
     }
     return runner.data;
@@ -285,6 +285,25 @@ class SinglyLinkedList {
     // never saw val, return false
     return false;
   }
+
+  /**
+ * Concatenates the nodes of a given list onto the back of this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {SinglyLinkedList} addList An instance of a different list whose
+ *    whose nodes will be added to the back of this list.
+ * @returns {SinglyLinkedList} This list with the added nodes.
+ */
+  concat(addList) { }
+
+  /**
+   * Finds the node with the smallest data and moves that node to the front of
+   * this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {SinglyLinkedList} This list.
+   */
+  moveMinToFront() { }
 
 }
 

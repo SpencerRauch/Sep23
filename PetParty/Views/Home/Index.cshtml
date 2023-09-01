@@ -12,7 +12,9 @@
         </div>
         <div class="mb-3">
             <label asp-for="Species"></label>
-            <input asp-for="Species" class="form-control">
+            <select asp-for="Species" class="form-select" asp-items="@ViewBag.AllPets"> 
+                <option value="" selected disabled hidden>-- choose one ---</option>
+            </select>
             <span asp-validation-for="Species" class="text-danger"></span>
         </div>
         <div class="mb-3">

@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PetParty.Models;
 
 namespace PetParty.Controllers;
@@ -18,6 +19,12 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
+        ViewBag.AllPets = new List<SelectListItem> {
+            new SelectListItem("Dog", "Dog"),
+            new SelectListItem("Cat", "Cat"),
+            new SelectListItem("Turtle", "Turtle"),
+            new SelectListItem("Panda", "Panda"),
+        };
         return View();
     }
 
@@ -31,6 +38,13 @@ public class HomeController : Controller
             return RedirectToAction("AllPets"); 
 
         }
+
+        ViewBag.AllPets = new List<SelectListItem> {
+            new SelectListItem("Dog", "Dog"),
+            new SelectListItem("Cat", "Cat"),
+            new SelectListItem("Turtle", "Turtle"),
+            new SelectListItem("Panda", "Panda"),
+        };
         return View("Index");
         
     }
