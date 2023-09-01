@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VYuCpBfpOIBfOT61q/B02gvmgVfVRxVVPPOwe5LZeIleN5hoJVRqaXS/r0Z6fdkbtz36rzOqVzbIbEZCkzJnFg==",
+  "dgSpecHash": "3Pa81q/pfQVEGF4HEwuAOjlJHSDB+hnoKmdCT1SGB7J9/k7LTXL9H585bWSjO0PSRPutGjiJ2fosd5VTntHW0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\PetParty.csproj",
+  "projectFilePath": "C:\\stacks\\CSharp\\Sep23\\PetParty\\PetParty.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

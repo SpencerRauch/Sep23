@@ -1,4 +1,13 @@
 
 <h1>This is your pet</h1>
 
+@{
+    string? name = Context.Session.GetString("Name");
+}
+
+@if (name == "Bob")
+{
+    <p>Oh, hello Bob!</p>
+}
+
 <p>@Context.Session.GetString("Name") is a @Context.Session.GetInt32("Age") year old @Context.Session.GetString("Species")</p>
