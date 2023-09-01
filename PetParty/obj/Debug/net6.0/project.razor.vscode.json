@@ -23724,6 +23724,11 @@
       "FilePath": "c:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\thiba\\OneDrive\\Documents\\Coding\\02LECTURE\\2023\\09Sep\\Sep23\\PetParty\\Views\\Home\\YourPet.cshtml",
+      "TargetPath": "Views\\Home\\YourPet.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }

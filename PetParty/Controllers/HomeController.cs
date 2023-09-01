@@ -24,8 +24,9 @@ public class HomeController : Controller
             new SelectListItem("Cat", "Cat"),
             new SelectListItem("Turtle", "Turtle"),
             new SelectListItem("Panda", "Panda"),
+            new SelectListItem("Monkey", "Monkey"),
         };
-        return View();
+        return View("Index");
     }
 
     [HttpPost("pets/create")]
@@ -39,6 +40,30 @@ public class HomeController : Controller
 
         }
 
+        return Index();
+        
+    }
+
+    [HttpGet("pets")]
+    public ViewResult AllPets()
+    {
+        return View("AllPets",AllPetsList);
+    }
+
+    // ***************************************************************  
+
+    [HttpPost("pets/create2")]
+    public IActionResult CreatePet2(Pet p)
+    {
+        if (ModelState.IsValid)
+        {
+            HttpContext.Session.SetString("Name", p.Name);
+            HttpContext.Session.SetString("Species", p.Species);
+            HttpContext.Session.SetInt32("Age", p.Age);
+
+            return RedirectToAction("AllPets2"); 
+        }
+
         ViewBag.AllPets = new List<SelectListItem> {
             new SelectListItem("Dog", "Dog"),
             new SelectListItem("Cat", "Cat"),
@@ -49,10 +74,20 @@ public class HomeController : Controller
         
     }
 
-    [HttpGet("pets")]
-    public ViewResult AllPets()
+    [HttpGet("pets2")]
+    public ViewResult AllPets2()
     {
-        return View("AllPets",AllPetsList);
+        string? Name = HttpContext.Session.GetString("Name");
+        string? Species = HttpContext.Session.GetString("Species");
+        int? Age = HttpContext.Session.GetInt32("Age");
+
+        // if (Name == "Tex")
+        // {
+        //     return View("Index");
+        // }
+
+        Console.WriteLine($"{Name} is a {Age} year old {Species}");
+        return View("YourPet");
     }
 
 
