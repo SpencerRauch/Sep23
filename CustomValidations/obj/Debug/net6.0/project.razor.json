@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\obj\\Debug\\net6.0\\project.razor.json",
-  "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\NewMVC.csproj",
+  "SerializedFilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\CustomValidations.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,46 +18371,41 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "NewMVC",
+  "RootNamespace": "CustomValidations",
   "Documents": [
     {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\Shared\\_Layout2.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout2.cshtml",
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\stacks\\CSharp\\Sep23\\NewMVC\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\Home\\Results.cshtml",
+      "TargetPath": "Views\\Home\\Results.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\stacks\\CSharp\\Sep23\\CustomValidations\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],
