@@ -48,7 +48,7 @@ List<VideoGame> Games = new()
 
 // Console.WriteLine(EldenRing);
 
-List<VideoGame> AffordableGames = Games.Where(g => g.Price <= 20.00).ToList();
+List<VideoGame> AffordableGames = Games.Where(g => g.Creators.Any(c => c == "Eric")).ToList();
 // AffordableGames.ForEach(Console.WriteLine);
 
 //Order matters for our LINQ queries! 
