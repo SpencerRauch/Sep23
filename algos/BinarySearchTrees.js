@@ -145,6 +145,7 @@ threeLevelTree.root.left.right = new BSTNode(6);
 threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
 
+console.log("*****************************")
 emptyTree.print()
 console.log("*****************************")
 twoLevelTree.print()
