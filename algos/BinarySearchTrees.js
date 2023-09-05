@@ -57,8 +57,13 @@ class BinarySearchTree {
      * @returns {number} The smallest integer from this tree.
      */
     min(current = this.root) {
-        //Your code here
-     }
+        if (current === null) return null
+        runner = this.root
+        while(runner.left){
+            runner = runner.left
+        }
+        return runner.data
+    }
 
     /**
      * Retrieves the smallest integer data from this tree.
@@ -69,7 +74,12 @@ class BinarySearchTree {
      * @returns {number} The smallest integer from this tree.
      */
     minRecursive(current = this.root) { 
-        //Your code here
+        if (this.isEmpty()) return null
+        if (current.left == null){
+            return current.data
+        }
+        return this.minRecursive(current.left)
+
     }
 
     /**
@@ -81,7 +91,12 @@ class BinarySearchTree {
      * @returns {number} The largest integer from this tree.
      */
     max(current = this.root) { 
-        //Your code here
+        if (current === null) return null
+        runner = this.root
+        while(runner.right){
+            runner = runner.right
+        }
+        return runner.data
     }
 
     /**
@@ -93,7 +108,12 @@ class BinarySearchTree {
      * @returns {number} The largest integer from this tree.
      */
     maxRecursive(current = this.root) {
-        //Your code here
+        if (this.isEmpty()) return null
+        if (current.right == null){
+            return current.data
+        }
+        return this.minRecursive(current.right)
+
      }
 
     // Logs this tree horizontally with the root on the left.
