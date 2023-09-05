@@ -20,6 +20,7 @@ public class VideoGame
 
   public override string ToString()
   {
+    // the @ symbol will make this a raw string
     return $@"
     Title:     {Title}
     Studio:    {Studio}
