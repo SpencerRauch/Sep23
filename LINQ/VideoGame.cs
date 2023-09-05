@@ -1,3 +1,4 @@
+#pragma warning disable CS8618
 public class VideoGame
 {
   public string Title { get; set; }
@@ -7,7 +8,7 @@ public class VideoGame
   public string Platform { get; set; }
 
   public VideoGame(){}
-  
+
   public VideoGame(string title, string studio, string rating, double price, string platform)
   {
     Title = title;

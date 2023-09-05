@@ -2,7 +2,7 @@
 Console.WriteLine("Hello, World!");
 
 List<VideoGame> Games = new List<VideoGame> {
-    new VideoGame("Apex Legends", "Riot", "E", 0, "Xbox"),
+    new VideoGame("Apex Legends", "Riot", "E", 0, "Xbox, PC"),
     new VideoGame("The Last of Us", "Naughty Dog", "M", 39.99, "PlayStation"),
     new VideoGame("Untitled Goose Game", "House House", "E", 29.99, "PC"),
     new VideoGame("Super Mario Bros.", "Nintendo", "E", 49.99, "SNES"),
@@ -17,3 +17,5 @@ foreach (VideoGame videoGame in Games)
     Console.WriteLine(videoGame);
     
 }
+
+
