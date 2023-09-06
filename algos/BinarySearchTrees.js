@@ -140,7 +140,41 @@ class BinarySearchTree {
      * @returns {BinarySearchTree} This tree.
     */
     insert(newVal) { 
-        //Your code here
+        //create new node
+        const newNode = new BSTNode(newVal);
+
+        // if empty, new node is now our root
+        if (this.isEmpty()){
+            this.root = newNode;
+        }
+
+        //otherwise, runner starts at root
+        let runner = this.root;
+
+        //loop until we return
+        while(true){
+            //if newNode is larger, peek right
+            if (newNode.data > runner.data){
+                //if right is empty, insert node
+                if (runner.right == null){
+                    runner.right = newNode
+                    return this
+                }
+                //otherwise, traverse right
+                runner = runner.right
+            }
+
+            else{
+                //node is less than or equal, go left
+                //if left is empty, insert node
+                if (runner.left == null){
+                    runner.left = newNode
+                    return this
+                }
+                //otherwise, traverse left
+                runner = runner.left
+            }
+        }
     }
 
     /**
@@ -154,8 +188,29 @@ class BinarySearchTree {
     * @returns {BinarySearchTree} This tree.
     */
     insertRecursive(newVal, curr = this.root) { 
-        //Your code here
-
+        
+        //if BST is empty, new node is root and done
+        if (this.isEmpty()){
+            this.root = new BSTNode(newVal)
+            return this
+        }
+        //if new val is greater than current data, look right
+        if (newVal > curr.data){
+            //if right is null, insert our node
+            if (curr.right === null){
+                curr.right = new BSTNode(newVal)
+                return this
+            }
+            //if not not null, traverse right
+            return this.insertRecursive(newVal, curr.right)
+        }
+        if (curr.left === null){
+            //if left is null, insert our node
+            curr.left = new BSTNode(newVal)
+            return this
+        }
+        // otherwise, traverse left
+        return this.insertRecursive(newVal,curr.left)
     }
     
 }
@@ -196,4 +251,5 @@ emptyTree.print();
 console.log("*****************************");
 twoLevelTree.print();
 console.log("*****************************");
+threeLevelTree.insertRecursive(12)
 threeLevelTree.print();
