@@ -139,12 +139,12 @@ class BinarySearchTree {
      * @param {number} newVal The data to be added to a new node.
      * @returns {BinarySearchTree} This tree.
     */
-    insert(newVal) { 
+    insert(newVal) {
         //create new node
         const newNode = new BSTNode(newVal);
 
         // if empty, new node is now our root
-        if (this.isEmpty()){
+        if (this.isEmpty()) {
             this.root = newNode;
         }
 
@@ -152,27 +152,27 @@ class BinarySearchTree {
         let runner = this.root;
 
         //loop until we return
-        while(true){
+        while (true) {
             //if newNode is larger, peek right
-            if (newNode.data > runner.data){
+            if (newNode.data > runner.data) {
                 //if right is empty, insert node
-                if (runner.right == null){
-                    runner.right = newNode
-                    return this
+                if (runner.right == null) {
+                    runner.right = newNode;
+                    return this;
                 }
                 //otherwise, traverse right
-                runner = runner.right
+                runner = runner.right;
             }
 
-            else{
+            else {
                 //node is less than or equal, go left
                 //if left is empty, insert node
-                if (runner.left == null){
-                    runner.left = newNode
-                    return this
+                if (runner.left == null) {
+                    runner.left = newNode;
+                    return this;
                 }
                 //otherwise, traverse left
-                runner = runner.left
+                runner = runner.left;
             }
         }
     }
@@ -187,32 +187,62 @@ class BinarySearchTree {
     *    the tree is being traversed.
     * @returns {BinarySearchTree} This tree.
     */
-    insertRecursive(newVal, curr = this.root) { 
-        
+    insertRecursive(newVal, curr = this.root) {
+
         //if BST is empty, new node is root and done
-        if (this.isEmpty()){
-            this.root = new BSTNode(newVal)
-            return this
+        if (this.isEmpty()) {
+            this.root = new BSTNode(newVal);
+            return this;
         }
         //if new val is greater than current data, look right
-        if (newVal > curr.data){
+        if (newVal > curr.data) {
             //if right is null, insert our node
-            if (curr.right === null){
-                curr.right = new BSTNode(newVal)
-                return this
+            if (curr.right === null) {
+                curr.right = new BSTNode(newVal);
+                return this;
             }
             //if not not null, traverse right
-            return this.insertRecursive(newVal, curr.right)
+            return this.insertRecursive(newVal, curr.right);
         }
-        if (curr.left === null){
+        if (curr.left === null) {
             //if left is null, insert our node
-            curr.left = new BSTNode(newVal)
-            return this
+            curr.left = new BSTNode(newVal);
+            return this;
         }
         // otherwise, traverse left
-        return this.insertRecursive(newVal,curr.left)
+        return this.insertRecursive(newVal, curr.left);
     }
-    
+
+    /**
+    * Determines if this tree contains the given searchVal.
+    * @param {number} searchVal The number to search for in the node's data.
+    * @returns {boolean} Indicates if the searchVal was found.
+    */
+    contains(searchVal) {
+        //Your code here
+    }
+
+    /**
+    * Determines if this tree contains the given searchVal.
+    * @param {number} searchVal The number to search for in the node's data.
+    * @returns {boolean} Indicates if the searchVal was found.
+    */
+    containsRecursive(searchVal, current = this.root) { 
+        //Your code here
+    }
+
+    /**
+    * Recursively counts the total number of nodes in this tree.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @param {Node} node The current node during the traversal of this tree.
+    * @returns {number} The total number of nodes.
+    */
+    size(node = this.root) {
+        //Your code here
+    }
+
+
 }
 
 const emptyTree = new BinarySearchTree();
@@ -251,5 +281,5 @@ emptyTree.print();
 console.log("*****************************");
 twoLevelTree.print();
 console.log("*****************************");
-threeLevelTree.insertRecursive(12)
+threeLevelTree.insertRecursive(12);
 threeLevelTree.print();
