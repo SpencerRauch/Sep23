@@ -220,6 +220,16 @@ class BinarySearchTree {
     */
     contains(searchVal) {
         //Your code here
+        let current = this.root;
+        while (current) {
+            if (current.data == searchVal) return true;
+            if (current.data > searchVal) {
+                current = current.right;
+            } else {
+                current = current.left;
+            }
+        }
+        return false;
     }
 
     /**
@@ -227,8 +237,21 @@ class BinarySearchTree {
     * @param {number} searchVal The number to search for in the node's data.
     * @returns {boolean} Indicates if the searchVal was found.
     */
-    containsRecursive(searchVal, current = this.root) { 
-        //Your code here
+    containsRecursive(searchVal, current = this.root) {
+        if (current === null) {
+            return false;
+        }
+
+        if (current.data === searchVal) {
+            return true;
+        }
+
+        if (searchVal < current.data) {
+            return this.containsRecursive(searchVal, current.left);
+        }
+
+        return this.containsRecursive(searchVal, current.right);
+
     }
 
     /**
@@ -239,7 +262,8 @@ class BinarySearchTree {
     * @returns {number} The total number of nodes.
     */
     size(node = this.root) {
-        //Your code here
+        if (!node) return 0;
+        return 1 + this.size(node.left) + this.size(node.right);
     }
 
 
@@ -277,9 +301,9 @@ threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
 
 console.log("*****************************");
-emptyTree.print();
+// emptyTree.print();
 console.log("*****************************");
-twoLevelTree.print();
+// twoLevelTree.print();
 console.log("*****************************");
-threeLevelTree.insertRecursive(12);
-threeLevelTree.print();
+// threeLevelTree.insertRecursive(12);
+// threeLevelTree.print();
