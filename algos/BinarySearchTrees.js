@@ -146,6 +146,7 @@ class BinarySearchTree {
         // if empty, new node is now our root
         if (this.isEmpty()) {
             this.root = newNode;
+            return this;
         }
 
         //otherwise, runner starts at root
@@ -175,6 +176,8 @@ class BinarySearchTree {
                 runner = runner.left;
             }
         }
+        
+
     }
 
     /**
@@ -290,6 +293,14 @@ class BinarySearchTree {
      */
     toArrInorder(node = this.root, vals = []) { 
         //Your code here
+        if (node == null){
+            return vals;
+        }
+        this.toArrInorder(node.left)
+        vals.push(node.data)
+        this.toArrInorder(node.right)
+
+        return vals;
     }
 
     /**
@@ -349,10 +360,11 @@ fullTree
     .insert(90);
 
 // in order 
-//console.log(fullTree.toArrInorder())
+console.log("hello")
 
 //pre order
 //console.log(fullTree.toArrPreorder())
+//[25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
 
 //post order
 //console.log(fullTree.toArrPostorder())
