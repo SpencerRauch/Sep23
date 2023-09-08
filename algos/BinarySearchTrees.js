@@ -296,9 +296,9 @@ class BinarySearchTree {
         if (node == null){
             return vals;
         }
-        this.toArrInorder(node.left)
+        this.toArrInorder(node.left, vals)
         vals.push(node.data)
-        this.toArrInorder(node.right)
+        this.toArrInorder(node.right, vals)
 
         return vals;
     }
@@ -313,7 +313,12 @@ class BinarySearchTree {
      * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
      */
     toArrPreorder(node = this.root, vals = []) { 
-        //Your code here
+        if (node){
+            vals.push(node.data)
+            this.toArrPreorder(node.left,vals)
+            this.toArrPreorder(node.right,vals)
+        }
+        return vals;
     }
 
 
@@ -327,7 +332,12 @@ class BinarySearchTree {
      * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
      */
     toArrPostorder(node = this.root, vals = []) { 
-        //Your code here
+        if (node){
+            this.toArrPostorder(node.left,vals)
+            this.toArrPostorder(node.right,vals)
+            vals.push(node.data)
+        }
+        return vals;
     }
 }
 
@@ -360,11 +370,12 @@ fullTree
     .insert(90);
 
 // in order 
-console.log("hello")
+fullTree.print();
+console.log(fullTree.toArrInorder());
 
 //pre order
-//console.log(fullTree.toArrPreorder())
+console.log(fullTree.toArrPreorder());
 //[25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
 
 //post order
-//console.log(fullTree.toArrPostorder())
+console.log(fullTree.toArrPostorder());
