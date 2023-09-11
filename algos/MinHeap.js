@@ -83,3 +83,13 @@ class MinHeap {
         this.printHorizontalTree(parentIdx * 2, spaceCnt);
     }
 }
+
+//test code
+
+// let testHeap = new MinHeap();
+
+// testHeap.insert(5)
+// testHeap.insert(6)
+// testHeap.insert(7)
+// testHeap.insert(4)
+// testHeap.printHorizontalTree()
