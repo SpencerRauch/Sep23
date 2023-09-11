@@ -18,6 +18,7 @@ class MinHeap {
         this.heap = [null];
     }
 
+    //Helper methods for determining child / parent relationship of indices
     /**
      * @param {number} i
      */
@@ -48,6 +49,7 @@ class MinHeap {
      */
     top() { 
         //Your code here
+        return this.heap[1] ? this.heap[1] : null;
     }
 
     /**
@@ -60,8 +62,41 @@ class MinHeap {
      * @param {number} num The num to add.
      */
     insert(num) {
-        //Your code here
+        //add item to heap
+        this.heap.push(num)
+
+        //get index of new item
+        let insertedIdx = this.heap.length-1
+        //get index of new item's parent
+        let parentIdx = this.idxOfParent(insertedIdx)
+        //while value at insertion point less than its parent, swap and recalculate parent
+        while (this.heap[insertedIdx] < this.heap[parentIdx]){
+            let temp = this.heap[insertedIdx]
+            this.heap[insertedIdx] = this.heap[parentIdx]
+            this.heap[parentIdx] = temp
+            insertedIdx = parentIdx
+            parentIdx = this.idxOfParent(insertedIdx)
+        }
+        return this
      }
+     insertGroup2(num) {
+        this.heap.push(num);
+        let placeholder = this.heap.length - 1;
+        while (placeholder > 1) {
+            // storing parent data in a variable
+            let parentIndex = this.idxOfParent(placeholder)
+
+            if (this.heap[placeholder] < this.heap[parentIndex]) {
+                // our new variable is swapping with the parent 
+                // this is the same as destructuring
+                [this.heap[placeholder], this.heap[parentIndex]] = [this.heap[parentIndex], this.heap[placeholder]];
+                placeholder = parentIndex;
+            } else {
+                break;
+            }
+        }
+
+    }
 
     /**
      * Logs the tree horizontally with the root on the left and the index in
@@ -86,10 +121,12 @@ class MinHeap {
 
 //test code
 
-// let testHeap = new MinHeap();
+let testHeap = new MinHeap();
 
-// testHeap.insert(5)
-// testHeap.insert(6)
-// testHeap.insert(7)
-// testHeap.insert(4)
-// testHeap.printHorizontalTree()
+testHeap.insert(5)
+testHeap.insert(4)
+testHeap.insert(3)
+testHeap.insert(2)
+testHeap.insert(1)
+testHeap.printHorizontalTree()
+console.log(testHeap.top())
