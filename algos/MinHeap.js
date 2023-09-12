@@ -70,7 +70,7 @@ class MinHeap {
         //get index of new item's parent
         let parentIdx = this.idxOfParent(insertedIdx)
         //while value at insertion point less than its parent, swap and recalculate parent
-        while (this.heap[insertedIdx] < this.heap[parentIdx]){
+        while (this.heap[insertedIdx] < this.heap[parentIdx] && parentIdx >= 1){
             let temp = this.heap[insertedIdx]
             this.heap[insertedIdx] = this.heap[parentIdx]
             this.heap[parentIdx] = temp
@@ -171,11 +171,11 @@ class MinHeap {
 
 let testHeap = new MinHeap();
 
-testHeap.insert(5)
-testHeap.insert(4)
-testHeap.insert(3)
-testHeap.insert(2)
 testHeap.insert(1)
+testHeap.insert(2)
+testHeap.insert(4)
+testHeap.insert(-5)
+testHeap.insert(9)
 testHeap.printHorizontalTree()
-console.log(testHeap.extract())
-testHeap.printHorizontalTree()
+// console.log(testHeap.extract())
+// testHeap.printHorizontalTree()
