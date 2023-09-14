@@ -7,6 +7,9 @@ class DLLNode {
 
     constructor(data) {
         //your code here
+        this.data = data;
+        this.prev = null;
+        this.next = null;
     }
 }
 
@@ -25,6 +28,8 @@ class DoublyLinkedList {
     constructor() {
         //Your code here
         // TODO: implement the constructor.
+        this.head = null;
+        this.tail = null;
     }
 
     /**
@@ -36,6 +41,16 @@ class DoublyLinkedList {
      */
     insertAtFront(data) {
         //Your code here
+        let newHead = new DLLNode(data);
+        if (this.isEmpty()) {
+            this.head = newHead;
+            this.tail = newHead;
+        } else {
+            this.head.prev = newHead;
+            newHead.next = this.head;
+            this.head = newHead;
+        }
+        return this;
     }
 
     /**
@@ -46,7 +61,16 @@ class DoublyLinkedList {
      * @returns {DoublyLinkedList} This list.
      */
     insertAtBack(data) {
-        //Your code here
+        let newTail = new DLLNode(data);
+        if (this.isEmpty()) {
+            this.head = newTail;
+            this.tail = newTail;
+        } else {
+            this.tail.next = newTail;
+            newTail.prev = this.tail;
+            this.tail = newTail;
+        }
+        return this;
     }
 
     // EXTRA
@@ -56,8 +80,53 @@ class DoublyLinkedList {
      * - Space: O(?).
      * @returns {any} The data of the removed node or null if no true middle exists
      */
-    removeMiddleNode() { 
+    removeMiddleNode() {
         //Your code here
+        // when there is only 1 node, it is the middle, remove it.
+        if (!this.isEmpty() && this.head === this.tail) {
+            const removedData = this.head.data;
+            this.head = null;
+            this.tail = null;
+            return removedData;
+        }
+
+        let forwardRunner = this.head;
+        let backwardsRunner = this.tail;
+
+        while (forwardRunner && backwardsRunner) {
+            if (forwardRunner === backwardsRunner) {
+                const midNode = forwardRunner;
+                midNode.prev.next = midNode.next;
+                midNode.next.prev = midNode.prev;
+                return midNode.data;
+            }
+            // runners passed each other without stopping on the same node, even length, we can exit early
+            if (forwardRunner.prev === backwardsRunner) {
+                return null;
+            }
+            forwardRunner = forwardRunner.next;
+            backwardsRunner = backwardsRunner.prev;
+        }
+        return null;
+    }
+
+    removeMiddleNode2() { 
+        if (this.isEmpty()){
+            return null;
+        }
+        let runner1 = this.head;
+        let runner2 = this.tail;
+        while (runner1 || runner2){
+            if (runner1 == runner2){
+                let result = runner1.data;
+                runner1.prev.next = runner1.next;
+                runner1.next.prev = runner1.prev;
+                return result;
+            }
+            runner1 = runner1.next;
+            runner2 = runner2.prev;
+        }
+        return null;
     }
 
     /**
@@ -101,17 +170,19 @@ class DoublyLinkedList {
 const emptyList = new DoublyLinkedList();
 
 /**************** Uncomment these test lists after insertAtBack is created. ****************/
-// const singleNodeList = new DoublyLinkedList().insertAtBack(1);
-// const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
-// const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
-// const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
-// const unorderedList = new DoublyLinkedList().insertAtBackMany([
-//   -5,
-//   -10,
-//   4,
-//   -3,
-//   6,
-//   1,
-//   -7,
-//   -2,
-// ]);
+const singleNodeList = new DoublyLinkedList().insertAtBack(1);
+const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
+const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
+const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
+const unorderedList = new DoublyLinkedList().insertAtBackMany([
+  -5,
+  -10,
+  4,
+  -3,
+  6,
+  1,
+  -7,
+  -2,
+]);
+
+console.log(unorderedList.toArray())
