@@ -110,14 +110,14 @@ class DoublyLinkedList {
         return null;
     }
 
-    removeMiddleNode2() { 
-        if (this.isEmpty()){
+    removeMiddleNode2() {
+        if (this.isEmpty()) {
             return null;
         }
         let runner1 = this.head;
         let runner2 = this.tail;
-        while (runner1 || runner2){
-            if (runner1 == runner2){
+        while (runner1 || runner2) {
+            if (runner1 == runner2) {
                 let result = runner1.data;
                 runner1.prev.next = runner1.next;
                 runner1.next.prev = runner1.prev;
@@ -138,6 +138,33 @@ class DoublyLinkedList {
     isEmpty() {
         return this.head === null;
     }
+
+    /**
+     * Inserts a new node with the given newVal after the node that has the
+     * given targetVal as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} targetVal The node data to find.
+     * @param {any} newVal Data for the new node.
+     * @returns {boolean} Indicates if the new node was added.
+     */
+    insertAfter(targetVal, newVal) {
+        //Your code here
+    }
+
+    /**
+     * Inserts a new node with the given newVal before the node that has the
+     * given targetVal as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} targetVal The node data to find.
+     * @param {any} newVal Data for the new node.
+     * @returns {boolean} Indicates if the new node was added.
+     */
+    insertBefore(targetVal, newVal) {
+        // your code here
+    }
+
 
     /**
      * Converts this list to an array of the node's data.
@@ -175,14 +202,20 @@ const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
 const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
 const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
 const unorderedList = new DoublyLinkedList().insertAtBackMany([
-  -5,
-  -10,
-  4,
-  -3,
-  6,
-  1,
-  -7,
-  -2,
+    -5,
+    -10,
+    4,
+    -3,
+    6,
+    1,
+    -7,
+    -2,
 ]);
 
-console.log(unorderedList.toArray())
+
+console.log(unorderedList.toArray());
+unorderedList.insertBefore(-7, 100);
+console.log(unorderedList.toArray());
+unorderedList.insertAfter(6, 200);
+console.log(unorderedList.toArray());
+
