@@ -149,7 +149,83 @@ class DoublyLinkedList {
      * @returns {boolean} Indicates if the new node was added.
      */
     insertAfter(targetVal, newVal) {
-        //Your code here
+        if (this.isEmpty()) {
+            return false;
+        }
+
+        let runner = this.head;
+
+        // runner && is in case runner becomes null so we don't check null.data
+        while (runner && runner.data !== targetVal) {
+            runner = runner.next;
+        }
+
+        if (runner === null) {
+            return false;
+        }
+
+        const newNode = new DLLNode(newVal);
+        newNode.prev = runner;
+        newNode.next = runner.next;
+
+        if (runner === this.tail) {
+            this.tail = newNode;
+        } else {
+            // if runner was tail then next would be null.
+            runner.next.prev = newNode;
+        }
+
+        runner.next = newNode;
+        return true;
+    }
+
+    insertAfter2(targetVal, newVal) {
+        if (this.isEmpty()) {
+            return false
+        }
+        else {
+            let runner = this.head
+            let newNode = new DLLNode(newVal)
+            if (this.tail.data == targetVal) {
+                this.insertAtBack(newVal)
+                return true
+            }
+            while (runner.next != null) {
+                if (runner.data == targetVal) {
+                    newNode.next = runner.next;
+                    runner.next.prev = newNode
+                    runner.next = newNode;
+                    newNode.prev = runner;
+                    return true
+                }
+                runner = runner.next
+            }
+            return false
+        }
+    }
+
+    insertAfter3(targetVal, newVal) {
+        if (this.isEmpty()) {
+            return false;
+        }
+        let newNode = new DLLNode(newVal);
+        let runner = this.head;
+            while (runner != null){
+                if (runner.data == targetVal){
+                    newNode.prev = runner;
+                    newNode.next = runner.next;
+                    
+                    if (runner == this.tail){
+                        this.tail = newNode;
+                    } else {
+                        runner.next.prev = newNode;
+                    }
+                    runner.next = newNode; 
+                    return true;
+                }
+                runner = runner.next;
+            }
+            return false;
     }
 
     /**
@@ -162,7 +238,34 @@ class DoublyLinkedList {
      * @returns {boolean} Indicates if the new node was added.
      */
     insertBefore(targetVal, newVal) {
-        // your code here
+        if (this.isEmpty()) {
+            return false;
+        }
+
+        let runner = this.head;
+
+        // This was written with a different structure than insertAfter to
+        // for comparison purposes but the logic is almost the same.
+        while (runner) {
+            if (runner.data === targetVal) {
+                const newNode = new DLLNode(newVal);
+                newNode.next = runner;
+                newNode.prev = runner.prev;
+
+                if (runner === this.head) {
+                    this.head = newNode;
+                } else {
+                    // if runner was head then prev would be null.
+                    runner.prev.next = newNode;
+                }
+
+                runner.prev = newNode;
+                return true;
+            }
+
+            runner = runner.next;
+        }
+        return false;
     }
 
 
