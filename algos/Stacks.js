@@ -76,7 +76,7 @@ class StackNode {
     }
 }
 
-//Stack implemented with linked list, now we're talking
+//Stack implemented with a singly linked list, now we're talking
 class LinkedListStack {
     constructor() {
         this.head = null;
