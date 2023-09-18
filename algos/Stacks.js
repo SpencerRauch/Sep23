@@ -83,23 +83,42 @@ class LinkedListStack {
     }
 
     push(item) {
-
+        const newNode = new StackNode(item);
+        if (this.head === null) {
+            this.head = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
     }
 
     pop() {
+        if (this.head === null) {
+            return null;
+        }
 
+        const removed = this.head;
+        this.head = this.head.next;
+
+        return removed.data;
     }
 
     peek() {
-
+        return this.isEmpty() ? null : this.head.data
     }
 
     isEmpty() {
-
+        return this.head === null;
     }
 
     size() {
-
+        let len = 0
+        let runner = this.head
+        while(runner){
+            len++
+            runner = runner.next
+        }
+        return len
     }
 
     print() {
