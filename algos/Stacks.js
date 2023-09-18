@@ -101,4 +101,16 @@ class LinkedListStack {
     size() {
 
     }
+
+    print() {
+        let runner = this.head;
+        let vals = "";
+
+        while (runner) {
+            vals += `${runner.data}${runner.next ? ", " : ""}`;
+            runner = runner.next;
+        }
+        console.log(vals);
+        return vals;
+    }
 }
