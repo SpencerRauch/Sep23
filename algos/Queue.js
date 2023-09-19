@@ -16,7 +16,7 @@ class Queue {
      * @returns {number} The new size of this queue.
      */
     enqueue(item) {
-        
+
     }
 
     /**
@@ -130,5 +130,17 @@ class LinkedListQueue {
      */
     seed(vals) {
         vals.forEach((val) => this.enqueue(val));
+    }
+
+    print() {
+        let runner = this.head;
+        let vals = "";
+
+        while (runner) {
+            vals += `${runner.data}${runner.next ? ", " : ""}`;
+            runner = runner.next;
+        }
+        console.log(vals);
+        return vals;
     }
 }
