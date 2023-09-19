@@ -16,7 +16,8 @@ class Queue {
      * @returns {number} The new size of this queue.
      */
     enqueue(item) {
-
+        this.items.push(item)
+        return this.items.length
     }
 
     /**
@@ -27,7 +28,7 @@ class Queue {
      * @returns {any} The first item or undefined if empty.
      */
     dequeue() {
-
+        return this.items.shift()
     }
 
     /**
@@ -37,7 +38,7 @@ class Queue {
      * @returns {any} The first item or undefined if empty.
      */
     front() { 
-
+        return this.items[0]
     }
 
     /**
@@ -47,7 +48,7 @@ class Queue {
      * @returns {boolean}
      */
     isEmpty() { 
-
+        return this.items.length === 0
     }
 
     /**
@@ -57,7 +58,7 @@ class Queue {
      * @returns {number} The length.
      */
     size() { 
-
+        return this.items.length
     }
 }
 
