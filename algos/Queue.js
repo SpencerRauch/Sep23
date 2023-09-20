@@ -187,6 +187,7 @@ class LinkedListQueue {
 //Returns boolean whether queues are same length with same elements
 //Use only methods from Queue classes, do not directly alter linked list or array
 //No extra arrays / objects / etc
+//The queues should be in the same order when you're done! 
 
 function CompareQueues(qOne, qTwo) {
     //Your code here
