@@ -9,6 +9,16 @@ class Queue {
     }
 
     /**
+     * Retrieves the size of this queue.
+     * - Time: O(1) constant.
+     * - Space: O(1) constant.
+     * @returns {number} The length.
+     */
+    len() {
+        return this.items.length;
+    }
+
+    /**
      * Adds a new given item to the back of this queue.
      * - Time: O(1) constant.
      * - Space: O(1) constant.
@@ -16,8 +26,8 @@ class Queue {
      * @returns {number} The new size of this queue.
      */
     enqueue(item) {
-        this.items.push(item)
-        return this.items.length
+        this.items.push(item);
+        return this.items.length;
     }
 
     /**
@@ -28,7 +38,7 @@ class Queue {
      * @returns {any} The first item or undefined if empty.
      */
     dequeue() {
-        return this.items.shift()
+        return this.items.shift();
     }
 
     /**
@@ -37,8 +47,8 @@ class Queue {
      * - Space: O(1) constant.
      * @returns {any} The first item or undefined if empty.
      */
-    front() { 
-        return this.items[0]
+    front() {
+        return this.items[0];
     }
 
     /**
@@ -47,18 +57,13 @@ class Queue {
      * - Space: O(1) constant.
      * @returns {boolean}
      */
-    isEmpty() { 
-        return this.items.length === 0
+    isEmpty() {
+        return this.items.length === 0;
     }
 
-    /**
-     * Retrieves the size of this queue.
-     * - Time: O(1) constant.
-     * - Space: O(1) constant.
-     * @returns {number} The length.
-     */
-    size() { 
-        return this.items.length
+    print() {
+        console.log(this.items);
+        return this.items;
     }
 }
 
@@ -83,13 +88,16 @@ class LinkedListQueue {
         this.size = 0;
     }
 
+    len() {
+        return this.size;
+    }
     /**
      * - Time: O(1) constant.
      * - Space: O(1) constant.
      * @returns {boolean} Indicates if the list is empty.
      */
     isEmpty() {
-        //Your code here
+        return this.size === 0;
     }
 
     /**
@@ -100,7 +108,17 @@ class LinkedListQueue {
      * @returns {number} The new size of the queue.
      */
     enqueue(val) {
-        //Your code here
+        const newTail = new QueueNode(val);
+
+        if (this.isEmpty()) {
+            this.head = newTail;
+            this.tail = newTail;
+        } else {
+            this.tail.next = newTail;
+            this.tail = newTail;
+        }
+        this.size++;
+        return this.size;
     }
 
     /**
@@ -109,7 +127,19 @@ class LinkedListQueue {
      * @returns {any} The removed item.
      */
     dequeue() {
-        //Your code here
+        if (!this.head) {
+            return null;
+        }
+
+        const dequeued = this.head;
+        this.head = this.head.next;
+
+        if (this.head === null) {
+            this.tail = null;
+        }
+
+        this.size--;
+        return dequeued.data;
     }
 
     /**
@@ -119,7 +149,7 @@ class LinkedListQueue {
      * @returns {any} The first item.
      */
     front() {
-        //Your code here
+        return this.head ? this.head.data : null;
     }
 
 
@@ -144,4 +174,25 @@ class LinkedListQueue {
         console.log(vals);
         return vals;
     }
+
 }
+
+//Returns boolean whether queues are same length with same elements
+//Use only methods from Queue classes, do not directly alter linked list or array
+//No extra arrays / objects / etc
+
+function CompareQueues(qOne, qTwo) {
+    //Your code here
+}
+
+let arrayQueue = new Queue();
+arrayQueue.items = [1, 2, 3, 4, 5, 6];
+arrayQueue.print();
+
+let listQueue = new LinkedListQueue();
+listQueue.seed([1, 2, 3, 4, 5, 6]);
+listQueue.print();
+
+console.log(CompareQueues(arrayQueue, listQueue))
+
+
