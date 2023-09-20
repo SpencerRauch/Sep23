@@ -212,6 +212,37 @@ function CompareQueues(qOne, qTwo) {
     return isEqual;
 }
 
+function CompareQueues2(qOne, qTwo) {
+    //Your code here
+    if(qOne.isEmpty() && qTwo.isEmpty())
+    {
+        return true
+    }
+
+    if(qOne.len() == qTwo.len())
+    {
+        let count = 0;
+        let result = true;
+        while(count < qOne.len())
+        {
+            let resultOne = qOne.dequeue();
+            let resultTwo = qTwo.dequeue();
+            qOne.enqueue(resultOne)
+            qTwo.enqueue(resultTwo)
+            if(resultOne != resultTwo)
+            {
+                result = false
+            }
+            count++
+        }
+        return result
+    }
+    else{
+        return false
+    }
+
+}
+
 let arrayQueue = new Queue();
 arrayQueue.items = [1, 2, 3, 4, 5, 6];
 arrayQueue.print();
