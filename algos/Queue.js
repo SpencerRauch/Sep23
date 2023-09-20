@@ -88,9 +88,16 @@ class LinkedListQueue {
         this.size = 0;
     }
 
+    /**
+     * Retrieves the size of this queue.
+     * - Time: O(1) constant.
+     * - Space: O(1) constant.
+     * @returns {number} The length.
+     */
     len() {
         return this.size;
     }
+
     /**
      * - Time: O(1) constant.
      * - Space: O(1) constant.
