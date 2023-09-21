@@ -214,43 +214,56 @@ function CompareQueues(qOne, qTwo) {
 
 function CompareQueues2(qOne, qTwo) {
     //Your code here
-    if(qOne.isEmpty() && qTwo.isEmpty())
-    {
-        return true
+    if (qOne.isEmpty() && qTwo.isEmpty()) {
+        return true;
     }
 
-    if(qOne.len() == qTwo.len())
-    {
+    if (qOne.len() == qTwo.len()) {
         let count = 0;
         let result = true;
-        while(count < qOne.len())
-        {
+        while (count < qOne.len()) {
             let resultOne = qOne.dequeue();
             let resultTwo = qTwo.dequeue();
-            qOne.enqueue(resultOne)
-            qTwo.enqueue(resultTwo)
-            if(resultOne != resultTwo)
-            {
-                result = false
+            qOne.enqueue(resultOne);
+            qTwo.enqueue(resultTwo);
+            if (resultOne != resultTwo) {
+                result = false;
             }
-            count++
+            count++;
         }
-        return result
+        return result;
     }
-    else{
-        return false
+    else {
+        return false;
     }
 
 }
 
+/**
+ * Determines whether the sum of the left half of the queue items is equal to
+ * the sum of the right half. Avoid indexing the queue items directly via
+ * bracket notation, use the queue methods instead for practice.
+ * Use no extra array or objects.
+ * The queue should be returned to it's original order when done.
+ * If queue cannot be evenly divided, return false
+ * - Time: O(?).
+ * - Space: O(?).
+ * @returns {boolean} Whether the sum of the left and right halves is equal.
+ */
+function isSumOfHalvesEqual(queue) {
+    //Your code here
+}
+
+
 let arrayQueue = new Queue();
-arrayQueue.items = [1, 2, 3, 4, 5, 6];
+arrayQueue.items = [1, 2, 9, 3, 3, 6];
 arrayQueue.print();
 
 let listQueue = new LinkedListQueue();
-listQueue.seed([1, 2, 3, 4, 5, 6]);
+listQueue.seed([1, 2, 3, 4, 5, 6, 7]);
 listQueue.print();
 
-console.log(CompareQueues(arrayQueue, listQueue))
+console.log(isSumOfHalvesEqual(arrayQueue))
+console.log(isSumOfHalvesEqual(listQueue))
 
 
