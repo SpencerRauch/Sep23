@@ -251,9 +251,29 @@ function CompareQueues2(qOne, qTwo) {
  * @returns {boolean} Whether the sum of the left and right halves is equal.
  */
 function isSumOfHalvesEqual(queue) {
-    //Your code here
-}
+    const len = queue.len();
 
+    if (queue.isEmpty() || len % 2 !== 0) {
+        return false;
+    }
+
+    const halfLen = len / 2;
+    let leftSum = 0;
+    let rightSum = 0;
+    let count = 0;
+
+    while (count < len) {
+        const dequeued = queue.dequeue();
+        if (count < halfLen) {
+            leftSum += dequeued;
+        } else {
+            rightSum += dequeued;
+        }
+        count++;
+        queue.enqueue(dequeued);
+    }
+    return leftSum === rightSum;
+}
 
 let arrayQueue = new Queue();
 arrayQueue.items = [1, 2, 9, 3, 3, 6];
