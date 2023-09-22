@@ -109,22 +109,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  /**
-   * Converts this list into an array containing the data of each node.
-   * - Time: O(n) linear.
-   * - Space: O(n).
-   * @returns {Array<any>} An array of each node's data.
-   */
-  toArr() {
-    const arr = [];
-    let runner = this.head;
 
-    while (runner) {
-      arr.push(runner.data);
-      runner = runner.next;
-    }
-    return arr;
-  }
 
   /**
    * Creates a new node with the given data and inserts that node at the front
@@ -355,6 +340,38 @@ class SinglyLinkedList {
     return this;
   }
 
+  /**
+   * Converts this list into an array containing the data of each node.
+   * - Time: O(n) linear.
+   * - Space: O(n).
+   * @returns {Array<any>} An array of each node's data.
+   */
+  toArr() {
+    const arr = [];
+    let runner = this.head;
+
+    while (runner) {
+      arr.push(runner.data);
+      runner = runner.next;
+    }
+    return arr;
+  }
+
+  print(){
+    console.log(this.toArr())
+  }
+  /**
+   * Reverses this list in-place without using any extra lists.
+   * - Time: O(n) linear, n = list length.
+   * - Space: O(1) constant.
+   * @returns {SinglyLinkedList} This list.
+   */
+  reverse() {
+    //Your code here
+  }
+
+
+
 }
 
 /******************************************************************* 
@@ -376,9 +393,8 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
   1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
 
-unorderedList.removeVal(-2);
-console.log(unorderedList.toArr())
 
-/* Print your list like so:*/
-// console.log(firstThreeList.toArr());
-// console.log(sortedDupeList.toArr());
+sortedDupeList.print()
+sortedDupeList.reverse()
+sortedDupeList.print()
+
