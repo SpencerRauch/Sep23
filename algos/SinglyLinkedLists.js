@@ -368,10 +368,18 @@ class SinglyLinkedList {
    */
   reverse() {
     //Your code here
+    let prev = null; //our reference to the previous node, start it at null 
+    let node = this.head; //we'll start at the head
 
+    while (node) { //while we have a node
+      const nextNode = node.next; //store reference to the next node -- this will be null for the last node
+      node.next = prev; //point the current node backwards
+      prev = node; //current node becomes the previous node
+      node = nextNode; //move on to the next node
+    }
+    this.head = prev; //reset head to the last known node
+    return this;
   }
-
-
 
 }
 
